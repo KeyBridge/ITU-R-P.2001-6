@@ -3,9 +3,8 @@ package org.itur.p2001.preprocessor;
 
 /**
  * Standalone, immutable container for all results of §3 preliminary
- * calculations. Extended with fields required by
- * GaseousAbsorptionCalculatorImpl and other calculators. Java 11 compatible –
- * no records.
+ * calculations. Extended to support DiffractionPathCalculatorImpl and all other
+ * calculators. Java 11 compatible – no records.
  */
 public final class PreprocessedData {
 
@@ -13,16 +12,24 @@ public final class PreprocessedData {
   private final double effectiveEarthRadiusKm;
   private final double pathInclinationRad;
   private final double[] horizonAngles;
-  private final String pathClassification;  // LoS / trans-horizon / etc.
+  private final String pathClassification;
   private final double freeSpaceLossDb;
 
-  // Extended fields required by calculators
+  // Primary parameters (needed by multiple calculators)
   private final double frequencyMHz;
   private final double pathDistanceKm;
+  private final double txHeightM;
+  private final double rxHeightM;
+
+  // Geographic coordinates (required for raster lookups)
   private final double txLat;
   private final double txLon;
   private final double rxLat;
   private final double rxLon;
+
+  // Terrain profile (required for Bullington diffraction)
+  private final double[] distancesKm;
+  private final double[] heightsM;
 
   public PreprocessedData(
     double effectiveEarthRadiusKm,
@@ -32,10 +39,14 @@ public final class PreprocessedData {
     double freeSpaceLossDb,
     double frequencyMHz,
     double pathDistanceKm,
+    double txHeightM,
+    double rxHeightM,
     double txLat,
     double txLon,
     double rxLat,
-    double rxLon) {
+    double rxLon,
+    double[] distancesKm,
+    double[] heightsM) {
 
     this.effectiveEarthRadiusKm = effectiveEarthRadiusKm;
     this.pathInclinationRad = pathInclinationRad;
@@ -45,10 +56,16 @@ public final class PreprocessedData {
 
     this.frequencyMHz = frequencyMHz;
     this.pathDistanceKm = pathDistanceKm;
+    this.txHeightM = txHeightM;
+    this.rxHeightM = rxHeightM;
+
     this.txLat = txLat;
     this.txLon = txLon;
     this.rxLat = rxLat;
     this.rxLon = rxLon;
+
+    this.distancesKm = distancesKm != null ? distancesKm.clone() : null;
+    this.heightsM = heightsM != null ? heightsM.clone() : null;
   }
 
   // --- Getters ---
@@ -80,6 +97,14 @@ public final class PreprocessedData {
     return pathDistanceKm;
   }
 
+  public double getTxHeightM() {
+    return txHeightM;
+  }
+
+  public double getRxHeightM() {
+    return rxHeightM;
+  }
+
   public double getTxLat() {
     return txLat;
   }
@@ -96,12 +121,20 @@ public final class PreprocessedData {
     return rxLon;
   }
 
+  public double[] getDistancesKm() {
+    return distancesKm != null ? distancesKm.clone() : null;
+  }
+
+  public double[] getHeightsM() {
+    return heightsM != null ? heightsM.clone() : null;
+  }
+
   @Override
   public String toString() {
     return "PreprocessedData{"
-      + "effectiveEarthRadiusKm=" + effectiveEarthRadiusKm
-      + ", pathDistanceKm=" + pathDistanceKm
+      + "pathDistanceKm=" + pathDistanceKm
       + ", frequencyMHz=" + frequencyMHz
+      + ", txLat=" + txLat + ", txLon=" + txLon
       + ", pathClassification='" + pathClassification + '\''
       + '}';
   }
