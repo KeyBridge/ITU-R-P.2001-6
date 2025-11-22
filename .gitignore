@@ -1,0 +1,55 @@
+# =============================================================================
+# ITU-R P.2001-6 Java Architecture – .gitignore
+# =============================================================================
+
+# --- Large ITU map data (explicitly excluded as requested) ---
+docs/data/R-REC-P.836/P_836_Maps_annual/
+docs/data/R-REC-P.836/P_836_Maps_monthly/
+
+# --- General large binary/data files ---
+docs/data/**/*.bin
+docs/data/**/*.dat
+docs/data/**/*.zip
+docs/data/**/*.tar.gz
+
+# --- IDE / Editor files ---
+.idea/
+*.iml
+.vscode/
+*.swp
+*.swo
+*~
+
+# --- Build artifacts ---
+target/
+build/
+out/
+dist/
+*.class
+
+# --- Maven / Gradle ---
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+.gradle/
+gradle/
+gradlew
+gradlew.bat
+
+# --- OS generated files ---
+.DS_Store
+Thumbs.db
+
+# --- Local configuration ---
+*.local
+*.env
+
+# --- Temporary files ---
+*.tmp
+*.bak
+*.log
+
+# =============================================================================
+# End of .gitignore
+# =============================================================================
