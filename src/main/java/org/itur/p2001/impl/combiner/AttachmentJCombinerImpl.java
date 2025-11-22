@@ -1,7 +1,8 @@
-// src/main/java/org/itur/p2001/combiner/AttachmentJCombinerImpl.java
-package org.itur.p2001.combiner;
+// src/main/java/org/itur/p2001/impl/combiner/AttachmentJCombinerImpl.java
+package org.itur.p2001.impl.combiner;
 
 import java.util.List;
+import org.itur.p2001.combiner.AttachmentJCombiner;
 import org.itur.p2001.util.LossDistribution;
 
 /**

@@ -1,6 +1,7 @@
-// src/main/java/org/itur/p2001/path/DuctingPathCalculatorImpl.java
-package org.itur.p2001.path;
+// src/main/java/org/itur/p2001/impl/path/DuctingPathCalculatorImpl.java
+package org.itur.p2001.impl.path;
 
+import org.itur.p2001.path.DuctingPathCalculator;
 import org.itur.p2001.preprocessor.PreprocessedData;
 import org.itur.p2001.util.LossDistribution;
 import org.itur.p2001.util.RasterDataProvider;

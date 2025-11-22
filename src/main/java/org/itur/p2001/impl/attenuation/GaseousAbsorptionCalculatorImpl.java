@@ -1,7 +1,8 @@
-// src/main/java/org/itur/p2001/attenuation/GaseousAbsorptionCalculatorImpl.java
-package org.itur.p2001.attenuation;
+// src/main/java/org/itur/p2001/impl/attenuation/GaseousAbsorptionCalculatorImpl.java
+package org.itur.p2001.impl.attenuation;
 
 import java.util.Arrays;
+import org.itur.p2001.attenuation.GaseousAbsorptionCalculator;
 import org.itur.p2001.preprocessor.PreprocessedData;
 import org.itur.p2001.util.LossDistribution;
 import org.itur.p2001.util.RasterDataProvider;

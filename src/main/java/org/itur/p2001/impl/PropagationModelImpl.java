@@ -1,7 +1,8 @@
-// src/main/java/org/itur/p2001/PropagationModelImpl.java
-package org.itur.p2001;
+// src/main/java/org/itur/p2001/impl/PropagationModelImpl.java
+package org.itur.p2001.impl;
 
 import java.util.List;
+import org.itur.p2001.PropagationModel;
 import org.itur.p2001.attenuation.AttenuationCalculator;
 import org.itur.p2001.combiner.AttachmentJCombiner;
 import org.itur.p2001.input.PropagationInput;

@@ -1,7 +1,8 @@
-// src/main/java/org/itur/p2001/path/TroposcatterPathCalculatorImpl.java
-package org.itur.p2001.path;
+// src/main/java/org/itur/p2001/impl/path/TroposcatterPathCalculatorImpl.java
+package org.itur.p2001.impl.path;
 
 import java.util.Arrays;
+import org.itur.p2001.path.TroposcatterPathCalculator;
 import org.itur.p2001.preprocessor.PreprocessedData;
 import org.itur.p2001.util.LossDistribution;
 import org.itur.p2001.util.RasterDataProvider;

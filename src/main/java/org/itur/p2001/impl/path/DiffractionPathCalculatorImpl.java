@@ -1,7 +1,8 @@
-// src/main/java/org/itur/p2001/path/DiffractionPathCalculatorImpl.java
-package org.itur.p2001.path;
+// src/main/java/org/itur/p2001/impl/path/DiffractionPathCalculatorImpl.java
+package org.itur.p2001.impl.path;
 
 import java.util.Arrays;
+import org.itur.p2001.path.DiffractionPathCalculator;
 import org.itur.p2001.preprocessor.PreprocessedData;
 import org.itur.p2001.util.LossDistribution;
 

@@ -1,7 +1,9 @@
-// src/main/java/org/itur/p2001/preprocessor/Section3PreprocessorImpl.java
-package org.itur.p2001.preprocessor;
+// src/main/java/org/itur/p2001/impl/preprocessor/Section3PreprocessorImpl.java
+package org.itur.p2001.impl.preprocessor;
 
 import org.itur.p2001.input.PropagationInput;
+import org.itur.p2001.preprocessor.PreprocessedData;
+import org.itur.p2001.preprocessor.Section3Preprocessor;
 
 /**
  * Reference implementation of ITU-R P.2001-6 §3 preliminary calculations.

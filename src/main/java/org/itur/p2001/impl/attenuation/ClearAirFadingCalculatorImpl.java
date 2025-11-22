@@ -1,6 +1,7 @@
-// src/main/java/org/itur/p2001/attenuation/ClearAirFadingCalculatorImpl.java
-package org.itur.p2001.attenuation;
+// src/main/java/org/itur/p2001/impl/attenuation/ClearAirFadingCalculatorImpl.java
+package org.itur.p2001.impl.attenuation;
 
+import org.itur.p2001.attenuation.ClearAirFadingCalculator;
 import org.itur.p2001.preprocessor.PreprocessedData;
 import org.itur.p2001.util.LossDistribution;
 

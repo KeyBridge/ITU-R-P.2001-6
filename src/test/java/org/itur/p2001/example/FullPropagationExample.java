@@ -3,17 +3,17 @@ package org.itur.p2001.example;
 
 import java.util.Arrays;
 import org.itur.p2001.PropagationModel;
-import org.itur.p2001.PropagationModelImpl;
-import org.itur.p2001.attenuation.ClearAirFadingCalculatorImpl;
-import org.itur.p2001.attenuation.GaseousAbsorptionCalculatorImpl;
-import org.itur.p2001.attenuation.PrecipitationAttenuationCalculatorImpl;
-import org.itur.p2001.combiner.AttachmentJCombinerImpl;
+import org.itur.p2001.impl.PropagationModelImpl;
+import org.itur.p2001.impl.attenuation.ClearAirFadingCalculatorImpl;
+import org.itur.p2001.impl.attenuation.GaseousAbsorptionCalculatorImpl;
+import org.itur.p2001.impl.attenuation.PrecipitationAttenuationCalculatorImpl;
+import org.itur.p2001.impl.combiner.AttachmentJCombinerImpl;
+import org.itur.p2001.impl.path.DiffractionPathCalculatorImpl;
+import org.itur.p2001.impl.path.DuctingPathCalculatorImpl;
+import org.itur.p2001.impl.path.SporadicEPathCalculatorImpl;
+import org.itur.p2001.impl.path.TroposcatterPathCalculatorImpl;
+import org.itur.p2001.impl.preprocessor.Section3PreprocessorImpl;
 import org.itur.p2001.input.PropagationInput;
-import org.itur.p2001.path.DiffractionPathCalculatorImpl;
-import org.itur.p2001.path.DuctingPathCalculatorImpl;
-import org.itur.p2001.path.SporadicEPathCalculatorImpl;
-import org.itur.p2001.path.TroposcatterPathCalculatorImpl;
-import org.itur.p2001.preprocessor.Section3PreprocessorImpl;
 import org.itur.p2001.result.PropagationResult;
 import org.itur.p2001.util.LossDistribution;
 
