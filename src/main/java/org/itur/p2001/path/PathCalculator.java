@@ -1,7 +1,7 @@
 // src/main/java/org/itur/p2001/path/PathCalculator.java
 package org.itur.p2001.path;
 
-import org.itur.p2001.preprocessor.Section3Preprocessor.PreprocessedData;
+import org.itur.p2001.preprocessor.PreprocessedData;
 import org.itur.p2001.util.LossDistribution;
 
 /**

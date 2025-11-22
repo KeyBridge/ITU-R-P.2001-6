@@ -1,7 +1,7 @@
 // src/main/java/org/itur/p2001/attenuation/AttenuationCalculator.java
 package org.itur.p2001.attenuation;
 
-import org.itur.p2001.preprocessor.Section3Preprocessor.PreprocessedData;
+import org.itur.p2001.preprocessor.PreprocessedData;
 import org.itur.p2001.util.LossDistribution;
 
 /**

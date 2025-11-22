@@ -7,6 +7,7 @@ import org.itur.p2001.combiner.AttachmentJCombiner;
 import org.itur.p2001.input.PropagationInput;
 import org.itur.p2001.path.PathCalculator;
 import org.itur.p2001.preprocessor.Section3Preprocessor;
+import org.itur.p2001.result.PropagationResult;
 
 /**
  * Reference implementation façade for ITU-R P.2001-6 (09/2025).
