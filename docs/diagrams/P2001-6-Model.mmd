@@ -1,0 +1,67 @@
+flowchart TD
+    %% === INPUTS ===
+    A["Inputs
+    - Terrain profile (d_i, h_i, z_i)
+    - Frequency, distance, heights
+    - Time percentage p (0-100%)"] --> B["Section 3 Preliminary Calculations"]
+
+    %% === PRELIMINARY ===
+    B --> C{Path Classification}
+    C --> D1[Diffraction parameters]
+    C --> D2[Horizon angles]
+    C --> D3[Effective Earth radius]
+    C --> D4[Climatic parameters]
+
+    %% === FOUR PARALLEL PATHS ===
+    subgraph ParallelPaths ["Four Parallel End-to-End Propagation Paths"]
+        direction TB
+        P1["Sub-model 1
+        Normal Propagation
+        (Diffraction + surface)
+        Section 4.1 + Att. A,B,C"]
+        P2["Sub-model 2
+        Anomalous Propagation
+        (Ducting / Layer reflection)
+        Section 4.2 + Att. D"]
+        P3["Sub-model 3
+        Troposcatter
+        Section 4.3 + Att. E"]
+        P4["Sub-model 4
+        Sporadic-E
+        Section 4.4 + Att. G"]
+    end
+
+    B --> ParallelPaths
+
+    %% === MINIMUM SELECTION ===
+    ParallelPaths --> MIN["Select Minimum Loss
+    (Strongest mechanism at each p)
+    Attachment J Section J.2"]
+
+    %% === THREE ADDITIVE ATTENUATIONS ===
+    subgraph Additive ["Three Additive Attenuations (dB)"]
+        direction TB
+        A1["Gaseous Absorption
+        Attachment F"]
+        A2["Precipitation Fading
+        Attachment C"]
+        A3["Clear-Air Multipath/Focusing
+        Attachment B"]
+    end
+
+    MIN --> ADD["Add Attenuations
+    (Correlation-aware combination)"]
+    Additive --> ADD
+
+    %% === FINAL OUTPUT ===
+    ADD --> OUT["Final Basic Transmission Loss L_b(p)
+    Not exceeded for percentage p
+    0.00001% - 99.99999%"]
+
+    %% Styling
+    style A fill:#e3f2fd,stroke:#333
+    style OUT fill:#c8e6c9,stroke:#333
+    style ParallelPaths fill:#fff3e0,stroke:#f57c00
+    style Additive fill:#f3e5f5,stroke:#7b1fa2
+    style MIN fill:#e8f5e8,stroke:#2e7d32
+    style ADD fill:#e8eaf6,stroke:#303f9f
